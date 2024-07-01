@@ -1,0 +1,380 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Event Management</title>
+
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'static/images' %}">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Great Vibes">
+</head>
+
+<body>
+    <header>,
+        {% include 'wedding/inc/navbar.html' %}
+    </header>
+    <!-- banner starts -->
+    <div id="banner" class="banner">
+        <!-- left part -->
+        <div class="wedding1">
+            <img src="{% static 'images/wedding1.jpg' %}" alt="">
+            <a href="#" class="switch-btn" onclick="switchBanner('left')">Wedding</a>
+            <div class="content">
+                <h1 style="text-transform: uppercase;">Wedding Ceremony</h1>
+                <p>"The Perfect Knot" is your one stop purveyor for all things related to designing, planning
+                    and perfectly executing the most enchanting events.
+                </p>
+            </div>
+        </div>
+        <!-- middlet part -->
+        <div class="wedding2">
+            <img src="{% static 'images/wedding2.jpeg' %}" alt="" style="width: 612px;height:100%;">
+            <a href="#" class="switch-btn" onclick="switchBanner('middle')">VENDOR</a>
+            <div class="content">
+                <h1 style="color:darkblue">Services</h1>
+                <p style="color:darkblue">A vendor is the backbone of any event, since he is the one who provides all
+                    the material and
+                    manpower.
+
+                </p>
+            </div>
+        </div>
+        <!-- right part -->
+        <div class="wedding3">
+            <img src="{% static 'images/wedding3.webp' %}" alt="" style="width: 612px;height:100%;">
+            <a href="#" class="switch-btn" onclick="switchBanner('right')">OUR STORY</a>
+            <div class="content">
+                <h1>FILLING THE LOVE</h1>
+                <P>Truthful words spoken or written from one person to another to uplift, to encourage, and to make the
+                    recipient feel loved.
+                </P>
+            </div>
+        </div>
+        <a href="" class="reset" onclick="resetBanner()"><i class="fa-solid fa-power-off"></i></a>
+    </div>
+
+    <!-- banner ends -->
+
+    <!-- main section starts -->
+    <main>
+        {% include 'wedding/inc/message.html' %}
+        <section class="call-up">
+            <div class="call-up-box">
+                <i class="fa-solid fa-users fa-3x" style=" color: #ff0051;"></i>
+                <div>
+                    <p style="font-family: italic; font-size:large;">25,000 +</p>
+                    <p>Talking about us</p>
+                </div>
+            </div>
+            <div class="call-up-box">
+                <i class="fa-solid fa-heart fa-3x" style="  color: #ff0051;"></i>
+                <div>
+                    <p style="font-family: italic; font-size:large;">250 +</p>
+                    <p>Weddings Organized</p>
+                </div>
+            </div>
+            <div class="call-up-box">
+                <i class="fa fa-globe fa-3x" style="  color: #ff0051;"></i>
+                <div>
+                    <p style="font-family: italic; font-size:large;">15 +</p>
+                    <p>Destinations covered</p>
+                </div>
+            </div>
+            </div>
+            <div class="call-up-box">
+                <i class="fa fa-briefcase fa-3x" style="  color: #ff0051;"></i>
+                <div>
+                    <p style="font-family: italic; font-size:large;">10 + years</p>
+                    <p>Industry Experience and Expertise</p>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+    <!-- main section ends -->
+
+    <!-- about section starts -->
+    <section id="about" class="about">
+        <div class="left">
+            <div class="hall about-box">
+                <img src="{% static 'images/home1.jpeg'%}" alt="">
+                <div class="description">
+                    <h4>DESTINATION</h4>
+                    <p>Wedding destination selection is one of the most important aspects of your celebration. </p>
+
+                </div>
+            </div>
+            <div class="decor about-box">
+                <img src="{% static 'images/home2.jpeg'%}" alt="">
+                <div class="description">
+                    <h4>DECOR AND DESIGN</h4>
+                    <p>Year after year we have been awarded the best wedding decoration title for our innovative and
+                        unique
+                        designs.</p>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="catering about-box">
+                <img src="{% static 'images/home3.jpeg'%}" alt="">
+                <div class="description">
+                    <h4>FOOD</h4>
+                    <p>Food is an integral part of any celebration. It is a medium to spread joy and warmth, it can be a
+                        conversation starter or an ice breaker and a symbol of your culture and heritage. </p>
+                </div>
+            </div>
+            <div class="party about-box">
+                <img src="{% static 'images/home4.webp'%}" alt="">
+                <div class="description">
+                    <h4>MUSIC & DJ</h4>
+                    <p> With every unique experience that we plan at your wedding, we assure you that your guests will
+                        be fully
+                        happy and entertained with our entertainment activities for wedding guests. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- about section ends -->
+
+
+    <!-- handpicked section starts -->
+    <div class="container" id="handpick">
+        <div class="row">
+            <div class="col-12">
+                <h1 style="text-align: center;font-family: Great Vibes, cursive;"><span
+                        style="color: deeppink;text-shadow: 2px 2px 2px darkblue;">H</span>andpicked <span
+                        style="color: deeppink;text-shadow: 2px 2px 2px darkblue;">C</span>ategory</h1>
+                <h6 style="text-align: center;">This is an important differentiator in a crowded marketplace. In a
+                    nutshell, why should a searcher click on your webpage</h6>
+            </div>
+            {% for item in vendors %}
+            <div class="col-md-6 py-3 py-md-0" style="margin-bottom:30px">
+                <div class="card shadow my-3" style="width: 18rem; height:20rem; margin-left:120px;">
+                    <img src="{{item.hall_image.url}}" class="card-image-top" alt="wedding img" style="height:200px;">
+                    <a href="{% url 'vendor_details' item.category.name item.name %}" style="text-decoration: none; ">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">{{item.name}}</h5>
+                            <p class="card-text">
+                                <span class="float-start old_price" style=" font-weight: bold;
+                                color: red;"><s>Rs. {{item.old_price | stringformat:'d'}}</s></span>
+                                <span class="float-end new_price" style=" font-weight: bold; border-radius:5px;
+                                color: white; background-color: green; padding: 2px;">Rs. {{item.dis_price }}
+                            </p></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- handpicked section ends -->
+    <!-- our story starts -->
+    <section id="our_story">
+        <article class="testimonial">
+            <div class="main-txt" style="text-align: center; margin-top:30px">
+                <h1 style="font-family: Great Vibes, cursive;">
+                    <span style="color: deeppink;text-shadow: 2px 2px 2px darkblue;">O</span>ur
+                    <span style="color: deeppink;text-shadow: 2px 2px 2px darkblue;"> S</span>tory
+                </h1>
+            </div>
+            <div class="card shadow" style="margin: 10px;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="{% static 'images/wedding4.jpeg' %}" alt="">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="testimonial-content">
+                                <div class="testimonial-content" style="margin-left: 10px;">
+                                    <h3 style="text-align: center; color:#ff0051"># SHREYANS & SAMIKSHA</h3>
+                                    <p>"The Perfect Knot" made the most important day of our life so special and
+                                        memorable that
+                                        every time when we think about our
+                                        wedding it brings a smile on our face and our wedding would not have been
+                                        planned so amazing
+                                        if we had not chosen the right
+                                        people: the "The Perfect Knot" team worked truly with utmost dedication and
+                                        innovation.</p>
+                                    <p><i>"The Perfect Knot" team is very friendly and understanding and crazy
+                                            people</i>
+                                    </p>
+                                    <p>Rajat and Devang left no stone unturned to make my wedding most talked about
+                                        event in
+                                        Ahmedabad and even India..
+                                        They are absolutely passionate about their work and know how to live their
+                                        work..</p>
+                                    <p>Be it from the decorations , selection of artists, food, music everything was
+                                        just perfect!!
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card shadow"style="margin: 10px;" >
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="{% static 'images/wedding5.jpeg' %}" alt="" style="height: 400px; width: 600px;">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="testimonial-content">
+                                <div class="testimonial-content" style="margin-left: 10px;">
+                                    <h3 style="text-align: center; color:#ff0051"># POOJA AND SIDDHANT</h3>
+                                    <p>Dear Devangji and team, I wanted to express my heartfelt gratitude for organising
+                                        the
+                                        beautiful Rokah ceremony for my daughter and
+                                        son-in-law. The attention to detail and flawless execution truly made it a
+                                        memorable
+                                        experience for everyone involved.
+                                        Your hard work, dedication, and professionalism were evident in every aspect of
+                                        the event.
+                                        From the stunning decor to the seamless
+                                        coordination, everything was perfect. We appreciate your efforts in ensuring
+                                        that every
+                                        guest felt welcomed and comfortable
+                                        throughout the ceremony. Please extend our gratitude to the entire event team
+                                        for their
+                                        exceptional work especially to Sauravji
+                                        and Priyanka ma’am. We are immensely grateful for each and everyone for their
+                                        contribution
+                                        in making our Rokah ceremony a cherished and joyous occasion. We look forward to
+                                        working
+                                        with you again in the future. Thank you once again for your outstanding efforts.
+                                        🎊🥂
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card shadow" style="margin: 10px;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="{% static 'images/wedding6.jpeg' %}" alt="" style="height: 400px; width: 600px;">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="testimonial-content">
+                                <div class="testimonial-content" style="margin-left: 10px;">
+                                    <h3 style="text-align: center; color:#ff0051"># Ritika & Shashank</h3>
+                                    <p>Thank you very much to Rajat bhaiya and the entire team. We are so glad we choose
+                                        " The
+                                        perfect knot " for
+                                        handling the wedding. Would really appreciate all the hard work and
+                                        coordination. All your
+                                        team members are very corporative and there was never a no from anyone.</p>
+
+                                    <p>Thank you entire " The perfect knot " team for making our wedding a grand
+                                        success. The
+                                        wedding management and
+                                        coordination has been commendable. All our wedding dreams have come true and
+                                        this wouldn’t
+                                        have been possible without the hard work the team has put in. I am glad we went
+                                        ahead with
+                                        team " The perfect knot ".</p>
+
+                                    <p>We have built a lifelong bond now, and will continue to work together in our
+                                        future events.
+                                        The wedding was handled flawlessly. It was a pleasure for me and my family to
+                                        have handed
+                                        over our big big day to you and I must say it was a grand success. Thank You
+                                        Again. 🙏</p>
+
+                                    <p>And special thanks to Priyank too. 🙏</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </article>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <!-- banner script starts -->
+    <script>
+        // banner switch button script starts 
+        function switchBanner(name) {
+            var banner = document.querySelector('#banner')
+            if (!banner.classList.contains(name)) {
+                banner.className = 'banner';
+                banner.classList.add(name);
+            }
+            return;
+        }
+        // banner reset button script starts
+        function resetBanner() {
+            var banner = document.querySelector('#banner')
+            banner.className = 'banner';
+        }
+        // banner reset button script ends 
+    </script>
+    <!-- banner switch button script ends -->
+    <footer class="text-center text-lg-start bg-dark text-white">
+        <section class="container d-flex justify-content-center justify-content-lg-between p-4">
+            <div class="me-5 d-none d-lg-block">
+                <span>Get connected with us on social networks:</span>
+            </div>
+            <div>
+                <a href="" class="me-4 text-reset"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="" class="me-4 text-reset"><i class="fa-brands fa-twitter"></i></a>
+                <a href="" class="me-4 text-reset"><i class="fa fa-google"></i></a>
+                <a href="" class="me-4 text-reset"><i class="fa-brands fa-instagram"></i></a>
+                <a href="" class="me-4 text-reset"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="" class="me-4 text-reset"><i class="fa-brands fa-github"></i></a>
+
+            </div>
+        </section>
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <div class="row mt-3">
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">The Perfect knot</h6>
+                        <p>theperfectknot.com is the one stop destination for your family wedding.
+                            We give you the opportunity to give your wedding awesome and stress-free from our website.
+                        </p>
+                    </div>
+
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">Wedding Utilities</h6>
+                        <p><a href="" class="me-4 text-reset">Wedding halls</a></p>
+                        <p><a href="" class="me-4 text-reset">Catering</a> </p>
+                        <p><a href="" class="me-4 text-reset">Decorations</a></p>
+                        <p><a href="" class="me-4 text-reset">Dj & music</a></p>
+                        <p><a href="" class="me-4 text-reset">Photography</a></p>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">contact us</h6>
+                        <p><i class="fa fa-home"></i> The Perfect Knot</p>
+                        <p><i class="fa fa-envelope"></i> info@theperfectknot.com</p>
+                        <p><i class="fa fa-phone"></i> +91 6381473908</p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="text-center p-4">
+            &copy; 2024 Copyright <a href="#" class="text-reset fw-bold">theperfectknot.in</a>
+        </div>
+    </footer>
+</body>

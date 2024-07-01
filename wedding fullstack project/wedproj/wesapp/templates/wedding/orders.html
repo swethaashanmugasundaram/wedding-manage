@@ -1,0 +1,38 @@
+{% extends 'wedding/layouts/main.html' %}
+{% block title %}
+Orders page
+{% endblock title %}
+{% block link %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+{% endblock link %}
+{% block content %}
+
+<section class="bg-light py-4 my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h4 class="mb-3" style="margin-top:10px;">Favourite Items</h4>
+                <hr style="border-color: #b8bfc2;">
+            </div>
+
+            <table class="table table-bordered">
+                <tr>
+                    <th>Image</th>
+                    <th>Hall Name</th>
+                    <th>Price</th>
+                    <th>Remove</th>
+                </tr>
+                {% for item in fav %}
+                <tr>
+                    <td><img src="{{item.product.hall_image.url}}" height="75px" alt="{{item.product.name}}"></td>
+                    <td>{{item.product.name}}</td>
+                    <td class="amt">{{item.product.dis_price | stringformat:'d'}}</td>
+                </tr>
+                {% endfor %}
+              
+            </table>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

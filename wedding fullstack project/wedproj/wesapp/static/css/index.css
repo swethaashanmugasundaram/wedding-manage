@@ -1,0 +1,390 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  body{
+    width: 100%;
+  }
+  a{
+    text-decoration: none;
+  }
+  :root{
+    --primary: #ff0051;
+    --secondary: #3a3a3a;
+    --third: #f2f2f2;
+  }
+
+  #util li a:hover{
+    color: var(--primary);
+  }
+
+   /*banner starts */
+   #banner{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 0 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+  }
+/* Make the shade for images starts*/
+  .wedding1::before,
+  .wedding2::before,
+  .wedding3::before{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0,0,0.3);
+    z-index: 100;
+    transition: 0.5s;
+  }
+ /* Make the shade for images ends*/
+
+/* remove the shade for images on hover starts*/
+  .wedding1:hover:before,
+  .wedding2:hover::before,
+  .wedding3:hover::before{
+    background: transparent;
+  }
+
+/* remove the shade for images on hover ends*/
+
+  .wedding1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 40%;
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+    background: var(--primary);
+    transition: 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .wedding2{
+    position: absolute;
+    top: 10;
+    left: 30%;
+    height: 100%;
+    width: 40%;
+    clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 0% 100%, 25% 50%, 0 0);
+    background: var(--second);
+    transition: 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .wedding3{
+    position: absolute;
+    top: 10;
+    left: 60%;
+    height: 100%;
+    width: 40%;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+    background: var(--primary);
+    transition: 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+
+  #banner.left .wedding1,
+  #banner.middle .wedding2,
+  #banner.right .wedding3{
+    width: 100%;
+    clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 0% 100%, 0% 50%, 0% 0%);
+    transition: 1s;
+  }
+
+  #banner.middle .wedding2{
+    left: 0;
+  }
+
+  #banner.right .wedding3{
+    left: 0;
+  }
+  #banner.left .wedding2,
+  #banner.left .wedding3{
+    left: 120%;
+  }
+
+  #banner.right .wedding2,
+  #banner.right .wedding1{
+    left: -120%;
+  }
+
+  #banner.middle .wedding1{
+    left: -120%;
+  }
+
+  #banner.middle .wedding3{
+    visibility: hidden;
+  }
+
+/*banner images starts */
+
+  .wedding1 img,
+  .wedding2 img,
+  .wedding3 img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.5s;
+  }
+
+  #banner.left .wedding1 img{
+    width: 50%;
+  }
+  
+  #banner.middle .wedding2 img,
+  #banner.right .wedding3 img{
+    left: 50%;
+    width: 50%;
+  }
+
+/*banner images ends */
+
+/*switch btn starts */
+.wedding1 .switch-btn,
+.wedding3 .switch-btn{
+  color:midnightblue;
+}
+  .switch-btn{
+    position:absolute;
+    text-decoration: none;
+    color: #ff0051;
+    text-transform: uppercase;
+    font-size: 3em;
+    font-weight: 500;
+    margin-top: 40%;
+    z-index: 1500;
+    transition: 0.5s;
+    transform: scale(1);
+  }
+
+  .switch-btn:hover{
+    font-size: 4em;
+  }
+
+/*switch btn starts */
+
+/*banner reset button starts */
+.reset{
+  position: absolute;
+  left: 100px;
+  bottom: 100px;
+  z-index: 1000;
+  transition: 0.3s;
+}
+
+.reset.active{
+  transform: rotateZ(180deg);
+}
+
+.reset i{
+  color:darkblue;
+  font-size: 2em;
+  transition: 0.3s;
+}
+
+.reset i:hover{
+  color: #ff0051;
+
+}
+ /*banner reset button ends */
+
+ /*banner content starts */
+#banner .content{
+  position: absolute;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+  z-index: 900;
+}
+
+#banner .content h1{
+  color: #f2f2f2;
+  font-size: 4em;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+#banner .content p{
+  color: #f2f2f2;
+  font-size: 20px;
+  font-weight: 200;
+  margin-bottom: 20px;
+}
+
+#banner .content a{
+  position: relative;
+  color: #f2f2f2;
+  text-decoration: none;
+  width: 200px;
+  font-weight: 400;
+  padding:12px 20px;
+  border: 1px #f2f2f2 solid;
+}
+#banner .content a:hover{
+  background: #f2f2f2;
+  color: #ff0051;
+}
+#banner.left .wedding1 .content,
+#banner.middle .wedding2 .content,
+#banner.right .wedding3 .content{
+  opacity: 1;
+  visibility: visible;
+}
+
+.wedding1 .content{
+  left: 755px;
+}
+
+.wedding2 .content,
+.wedding3 .content{
+  left: 45px;
+}
+ /*banner content ends */
+  /*banner ends */
+
+/*main section starts */
+main{
+  width: 100%;
+  padding: 100px 0;
+  background: #f2f2f2;
+}
+section.call-up{
+  width: 100%;
+  padding: 0 60px ;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+.call-up-box{
+  position: relative;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px;
+  box-shadow: 0 0 25px rgba(0, 0,0,0.12);
+}
+/*main section ends */
+
+/* about section starts*/
+.about{
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.about .left,
+.about .right{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap:10px ;
+}
+
+.hall,
+.party{
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  justify-content: start;
+  align-items: end;
+  padding: 50px;
+}
+
+.decor,.catering{
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: start;
+  align-items: end;
+  padding: 50px;
+}
+
+.about-box{
+  overflow: hidden;
+}
+
+.about-box img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(1);
+  object-fit: cover;
+  object-position: center;
+  transition: 1s;
+}
+/* Darker shade of box */
+.about-box::after{
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0,0,0.5);
+  opacity: 1;
+  visibility: visible;
+  transition: 0.5s;
+}
+
+/*Slightly briter on hover*/
+.about-box:hover::after{
+  background: rgba(0, 0,0,0.2);
+}
+
+.about .description{
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  z-index: 900;
+  color:#f2f2f2;
+}
+
+.about a{
+  position: relative;
+  text-decoration: none;
+  color: #f2f2f2;
+  font-weight: 700;
+  display: inline;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid #f2f2f2;
+  width:40%;
+}
+/*about section ends */

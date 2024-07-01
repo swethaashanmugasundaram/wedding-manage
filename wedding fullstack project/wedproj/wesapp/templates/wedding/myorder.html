@@ -1,0 +1,55 @@
+{% extends 'wedding/layouts/main.html' %}
+{% block title %}
+order page
+{% endblock title %}
+{% block link %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Great Vibes">
+
+{% endblock link %}
+
+{% block content %}
+<section class="bg-light py-4 my-5">
+    <h1 style="text-align: center;font-family: Great Vibes, cursive;"><span
+        style="color: deeppink;text-shadow: 2px 2px 2px darkblue;">M</span>y<span
+        style="color: deeppink;text-shadow: 2px 2px 2px darkblue;">O</span>rders
+    </h1>
+    {% include 'wedding/inc/message.html' %}
+    <hr style="border-color: #b8bfc2;">
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Order Date</th>
+                                    <th>Total Price</th>
+                                    <th>Order Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in orders %}
+                                    
+                                    <tr>
+                                        <td>{{item.created_at}}</td>
+                                        <td>Rs: {{item.total_price}}</td>
+                                        <td>{{item.status}}</td>
+                                        <td>
+                                            <a href="{% url 'orderview' item.total_price %}" class="btn btn-primary">View Details</a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+</section>
+{% endblock content %}

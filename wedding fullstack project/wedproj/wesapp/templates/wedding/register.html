@@ -1,0 +1,66 @@
+{% extends 'wedding/layouts/main.html' %}
+{% block title %}
+Register page
+{% endblock title %}
+{% block link %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Great Vibes">
+
+{% endblock link %}
+{% block content %}
+<div class="container" style="margin-top: 90px;">
+    <div class="row">
+        <div class="col-12">
+            <h1 style="font-family: Great Vibes, cursive; text-align:center"><span
+                style="color: deeppink;text-shadow: 2px 2px 2px darkblue;">R</span>egister <span
+                style="color: deeppink;text-shadow: 2px 2px 2px darkblue;">P</span>age</h1>
+            <hr style="border-color:#b8bfc2;">
+            {% include 'wedding/inc/message.html' %}
+        </div>
+    </div>
+    <section class="py-4 my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <form method="POST" action="">
+                        {% csrf_token %}
+                        <div class="mb-4">
+                            <label for="" class="form-label">User Name</label>
+                            {{form.username}}
+                        </div>
+                        <div class="mb-4">
+                            <label for="" class="form-label">Email Address</label>
+                            {{form.email}}
+                        </div>
+                        <div class="mb-4">
+                            <label for="" class="form-label">Password</label>
+                            {{form.password1}}
+                        </div>
+                        <div class="mb-4">
+                            <label for="" class="form-label">Confirm Password</label>
+                            {{form.password2}}
+                        </div>
+                        <button type="submit" class="btn btn-success">Register</button>
+                    </form>
+                    <p class="my-2">Already user ? <a href="{% url 'login' %}">Login Now</a></p>
+                </div>
+                <div class="col-6">
+                            {% if form.errors.username %}
+                            <label class="text-danger d-block">{{ form.errors.username }}</label>
+                            {% endif %}
+                            {% if form.errors.email %}
+                            <label class="text-danger d-block">{{ form.errors.email }}</label>
+                            {% endif %}
+                            {% if form.errors.password1 %}
+                            <label class="text-danger d-block">{{ form.errors.password1 }}</label>
+                            {% endif %}
+                            {% if form.errors.password2 %}
+                            <label class="text-danger d-block">{{ form.errors.password2 }}</label>
+                            {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock content %}
+

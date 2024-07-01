@@ -1,0 +1,39 @@
+{% extends 'wedding/layouts/main.html' %}
+{% block title %}
+Detailing page
+{% endblock title %}
+{% block link %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Great Vibes">
+
+{% endblock link %}
+{% block content %}
+<section class="bg-light py-4 my-5">
+    {% include 'wedding/inc/message.html' %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h4 class="mb-3" style="text-align: center; margin-top:10px;">{{wedding_name}}</h4>
+                <hr style="border-color: #b8bfc2;">
+            </div>
+            {% for item in vendors %}
+            <div class="col-md-6 py-3 py-md-0" style="margin-bottom:30px">
+                <div class="card shadow my-3" style="width: 18rem; height:20rem; margin-left:120px;">
+                    <img src="{{item.hall_image.url}}" class="card-image-top" alt="wedding img"  style="height:200px;">
+                    <a href="{% url 'vendor_details' wedding_name item.name %}">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">{{item.name}}</h5>
+                            <p class="card-text">
+                                <span class="float-start old_price" style=" font-weight: bold;
+                                color: red;"><s>Rs. {{item.old_price  | stringformat:'d'}}</s></span>
+                                <span class="float-end new_price" style=" font-weight: bold; border-radius:5px;
+                                color: white; background-color: green; padding: 2px;">Rs. {{item.dis_price | stringformat:'d'}}</p></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock content %}

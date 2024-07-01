@@ -1,0 +1,129 @@
+{% load static %}
+
+ <!-- banner starts -->
+ <div id="banner" class="banner">
+    <!-- left part -->
+    <div class="wedding1">
+        <img src="{% static 'wedding1.jpg' %}" alt="">
+        <a href="#" class="switch-btn" onclick="switchBanner('left')">Wedding</a>
+        <div class="content">
+            <h1 style="text-transform: uppercase;">Wedding Ceremony</h1>
+            <p>"The Perfect Knot" is your one stop purveyor for all things related to designing, planning
+                and perfectly executing the most enchanting events.
+            </p>
+            <a href="#halls">Plan Your Destination Wedding with Us</a>
+        </div>
+    </div>
+    <!-- middlet part -->
+    <div class="wedding2">
+        <img src="{% static 'wedding2.jpeg' %}" alt="" style="width: 612px;height:100%;">
+        <a href="#" class="switch-btn" onclick="switchBanner('middle')">VENDOR</a>
+        <div class="content">
+            <h1 style="color:darkblue">Services</h1>
+            <p style="color:darkblue">A vendor is the backbone of any event, since he is the one who provides all
+                the material and
+                manpower.
+
+            </p>
+            <a href="#service" style="color:darkblue">Reach Us for Wedding Vendor Management</a>
+        </div>
+    </div>
+    <!-- right part -->
+    <div class="wedding3">
+        <img src="{% static 'wedding3.webp' %}" alt="" style="width: 612px;height:100%;">
+        <a href="#" class="switch-btn" onclick="switchBanner('right')">OUR STORY</a>
+        <div class="content">
+            <h1>FILLING THE LOVE</h1>
+            <P>Truthful words spoken or written from one person to another to uplift, to encourage, and to make the
+                recipient feel loved.
+            </P>
+            <a href="#our_story">Click to Know Our Wedding Stories</a>
+        </div>
+    </div>
+    <a href="" class="reset" onclick="resetBanner()"><i class="fa-solid fa-power-off"></i></a>
+</div>
+
+<!-- banner ends -->
+
+<!-- main section starts -->
+<main>
+    <section class="call-up">
+        <div class="call-up-box">
+            <i class="fa-solid fa-users fa-3x" style="  color: #ff0051;"></i>
+            <div>
+                <p style="font-family: italic; font-size:large;">25,000 +</p>
+                <p>Talking about us</p>
+            </div>
+        </div>
+        <div class="call-up-box">
+            <i class="fa-solid fa-heart fa-3x" style="  color: #ff0051;"></i>
+            <div>
+                <p style="font-family: italic; font-size:large;">250 +</p>
+                <p>Weddings Organized</p>
+            </div>
+        </div>
+        <div class="call-up-box">
+            <i class="fa fa-globe fa-3x" style="  color: #ff0051;"></i>
+            <div>
+                <p style="font-family: italic; font-size:large;">15 +</p>
+                <p>Destinations covered</p>
+            </div>
+        </div>
+        </div>
+        <div class="call-up-box">
+            <i class="fa fa-briefcase fa-3x" style="  color: #ff0051;"></i>
+            <div>
+                <p style="font-family: italic; font-size:large;">10 + years</p>
+                <p>Industry Experience and Expertise</p>
+            </div>
+        </div>
+        </div>
+    </section>
+</main>
+<!-- main section ends -->
+
+<!-- about section starts -->
+<section id="about" class="about">
+    <div class="left">
+        <div class="hall about-box">
+            <img src="{% static 'home1.jpeg'%}" alt="">
+            <div class="description">
+                <h4>DESTINATION</h4>
+                <p>Wedding destination selection is one of the most important aspects of your celebration. </p>
+                <a href="#halls">Plan your venue <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+        <div class="decor about-box">
+            <img src="{% static 'home2.jpeg'%}" alt="">
+            <div class="description">
+                <h4>DECOR AND DESIGN</h4>
+                <p>Year after year we have been awarded the best wedding decoration title for our innovative and
+                    unique
+                    designs.</p>
+                <a href="#decor">Plan your Decors <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="catering about-box">
+            <img src="{% static 'home3.jpeg'%}" alt="">
+            <div class="description">
+                <h4>FOOD</h4>
+                <p>Food is an integral part of any celebration. It is a medium to spread joy and warmth, it can be a
+                    conversation starter or an ice breaker and a symbol of your culture and heritage. </p>
+                <a href="#catering">Plan your Treat <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+        <div class="party about-box">
+            <img src="{% static 'home4.webp'%}" alt="">
+            <div class="description">
+                <h4>MUSIC & DJ</h4>
+                <p> With every unique experience that we plan at your wedding, we assure you that your guests will
+                    be fully
+                    happy and entertained with our entertainment activities for wedding guests. </p>
+                <a href="#entertainment">Book your Dj <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- about section ends -->

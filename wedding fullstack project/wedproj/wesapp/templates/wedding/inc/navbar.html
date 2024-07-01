@@ -1,0 +1,49 @@
+    <!-- nav starts -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home.html" id="logo"
+                style="font-size: 37px;font-family: Great Vibes, cursive;"><span
+                    style="color: deeppink;text-shadow: 2px 2px 2px darkblue;">T</span> he <span
+                    style="color: deeppink;text-shadow: 2px 2px 2px darkblue;"> P</span>erfect
+                <span style="color: deeppink;text-shadow: 2px 2px 2px darkblue;"> k</span>not</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'index' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="{% url 'vendor' %}">Real Wedding</a></li>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="{% url 'cart' %}">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="fav_view_page">Favourite</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="{% url 'myorder' %}">My Orders</a>
+                    </li>
+                    {% if request.user.is_authenticated %}
+                        <a class="nav-link " aria-current="page" href="#">{{request.user}}</a>
+                        <a class="nav-link " aria-current="page" href="{% url 'logout' %}">Logout</a>
+                    {% else %}
+                        <a class="nav-link " aria-current="page" href="{% url 'login' %}">Login</a>
+                        <a class="nav-link " aria-current="page" href="{% url 'register' %}">Register</a>
+                    {% endif %}
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+
+    </nav>
+    <!-- nav ends -->
